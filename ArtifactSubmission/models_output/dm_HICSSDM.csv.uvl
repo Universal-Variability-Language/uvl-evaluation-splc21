@@ -1,0 +1,39 @@
+namespace VIRTUAL_ROOT
+
+features
+	VIRTUAL_ROOT {abstract}	
+		or
+			SV_Solution	
+				alternative
+					BMDCRM
+					BMD�
+			CV_Documents	
+				or
+					archive
+					scan new
+					read existing
+					import external
+			CV_Claims	
+				or
+					journal
+					task manager
+			SV	
+				alternative
+					Solution
+					Particular Packages
+			CV_Customer	
+				or
+					phone
+					mail
+			CV	
+				or
+					Document Management
+					Customer Management
+					Claims Management
+			SV_Particular_Package	
+				or
+					Label Printing
+					Standard Letter
+					Organizer
+					Docs
+					Else

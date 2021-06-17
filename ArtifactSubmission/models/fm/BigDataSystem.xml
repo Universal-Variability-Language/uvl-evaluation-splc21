@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<struct>
+		<and mandatory="true" name="BigDataSystem">
+			<and mandatory="true" name="Infraestructure">
+				<and mandatory="true" name="Network">
+					<feature mandatory="true" name="Cable"/>
+					<feature name="Wireless"/>
+				</and>
+				<and mandatory="true" name="Storage">
+					<feature mandatory="true" name="Networkattachstorage"/>
+					<feature name="Directattachstorage"/>
+					<and name="Cloud">
+						<alt mandatory="true" name="Architecture">
+							<and name="Lambda">
+								<feature mandatory="true" name="Batchlayer"/>
+								<feature mandatory="true" name="Servinglayer"/>
+								<feature mandatory="true" name="Speedlayer"/>
+							</and>
+							<and name="Kappa">
+								<feature mandatory="true" name="Realtimelayer"/>
+								<feature mandatory="true" name="Servinglayer_1"/>
+							</and>
+							<feature name="Batch"/>
+						</alt>
+						<alt mandatory="true" name="Type">
+							<and name="Softwaresolution">
+								<feature name="CAtechnologies"/>
+								<feature name="Cisco"/>
+								<feature name="Dell"/>
+								<feature name="IBM"/>
+								<feature name="Redhat"/>
+								<feature name="VMWare"/>
+								<feature name="Oracle"/>
+								<feature name="Microsoft"/>
+							</and>
+							<and name="Convergedpre_integratedsystems">
+								<feature name="BMC"/>
+								<feature name="Cisco_1"/>
+								<feature name="CSC"/>
+								<feature name="Dell_1"/>
+								<feature name="IBM_1"/>
+								<feature name="Microsoft_1"/>
+								<feature name="NetApp"/>
+								<feature name="Oracle_1"/>
+								<feature name="VCE"/>
+							</and>
+							<and name="Managedprivatecloud">
+								<feature name="Citrix"/>
+								<feature name="Cisco_2"/>
+								<feature name="CSC_1"/>
+								<feature name="Dell_2"/>
+								<feature name="EMC"/>
+								<feature name="IBMmirantis"/>
+							</and>
+							<and name="Opensource">
+								<feature name="Openstack"/>
+								<feature name="Apachecloudstack"/>
+							</and>
+							<and name="Public">
+								<feature name="MicrosoftAzure"/>
+								<feature name="Googlecloud"/>
+								<feature name="Oraclecloud"/>
+								<feature name="AWS"/>
+							</and>
+							<and name="Hybrid">
+								<and name="OpenStack">
+									<feature mandatory="true" name="OpenStackpubliccloudpassport"/>
+								</and>
+								<and name="AWS_1">
+									<feature mandatory="true" name="Directconnect"/>
+								</and>
+								<and name="Microsoftazure">
+									<feature mandatory="true" name="Expressroute"/>
+								</and>
+								<and name="Googlecloud_1">
+									<feature mandatory="true" name="Dedicatedinterconnection"/>
+								</and>
+							</and>
+						</alt>
+						<alt mandatory="true" name="Storage_1">
+							<alt name="AWS_2">
+								<feature name="DynamoDB"/>
+								<feature name="RedShift"/>
+								<feature name="S3"/>
+							</alt>
+							<alt name="Microsoftazure_1">
+								<feature name="SQLDW"/>
+								<feature name="DataLakeStore"/>
+							</alt>
+							<alt name="Googlecloud_2">
+								<feature name="Bigtable"/>
+								<feature name="Datastore"/>
+								<feature name="Bigquery"/>
+							</alt>
+						</alt>
+						<alt mandatory="true" name="Processing">
+							<alt name="AWS_3">
+								<feature name="Datapipeline"/>
+								<feature name="Kinesis"/>
+								<feature name="EMR"/>
+							</alt>
+							<alt name="Microsoftazure_2">
+								<feature name="Streamanalytics"/>
+								<feature name="HDInsight"/>
+							</alt>
+							<alt name="Googlecloud_3">
+								<feature name="Dataproc"/>
+								<feature name="Dataflow"/>
+								<feature name="Pub_sub"/>
+							</alt>
+						</alt>
+						<alt mandatory="true" name="Intelligence">
+							<alt name="AWS_4">
+								<feature name="Machinelearning"/>
+								<feature name="Quicksight"/>
+							</alt>
+							<alt name="Microsoftazure_3">
+								<feature name="Cognitiveservices"/>
+								<feature name="Machinelearning_1"/>
+							</alt>
+							<alt name="Googlecloud_4">
+								<feature name="NaturallanguageAPI"/>
+								<feature name="Machinelearning_2"/>
+								<feature name="Datalab"/>
+							</alt>
+						</alt>
+					</and>
+					<and name="Onpremise">
+						<or mandatory="true" name="Services">
+							<feature name="Installation"/>
+							<feature name="Migration"/>
+							<feature name="Cluster"/>
+							<feature name="Fileserver"/>
+							<feature name="Certifyingentitites"/>
+							<feature name="Backupandreplication"/>
+						</or>
+						<alt mandatory="true" name="Technologies">
+							<feature name="Windowsserver"/>
+							<feature name="MicrosoftActiveDirectory"/>
+							<feature name="Exchange"/>
+							<feature name="Sharepoint"/>
+							<feature name="SAPbusinessone"/>
+							<feature name="Veeam"/>
+						</alt>
+					</and>
+				</and>
+				<and mandatory="true" name="Data">
+					<alt mandatory="true" name="Sources">
+						<feature name="Hardware"/>
+						<feature name="Software"/>
+					</alt>
+					<alt mandatory="true" name="Mobility">
+						<feature name="Batch_1"/>
+						<feature name="Streaming"/>
+						<feature name="Hybrid_1"/>
+					</alt>
+					<alt mandatory="true" name="Processing_2">
+						<feature name="Raw"/>
+						<feature name="Processed"/>
+						<feature name="Analyzed"/>
+					</alt>
+					<alt name="Security">
+						<feature name="Trusted"/>
+						<feature name="Untrusted"/>
+					</alt>
+					<alt mandatory="true" name="Category">
+						<and name="Structured">
+							<and mandatory="true" name="Modality">
+								<and mandatory="true" name="Text">
+									<feature name="Semanticanalysis"/>
+									<feature name="Emotionanalysis"/>
+									<feature name="Multimediaanalysis"/>
+								</and>
+							</and>
+							<and mandatory="true" name="Generation">
+								<feature name="Created"/>
+								<feature name="Provoked"/>
+								<feature name="Transactiondriven"/>
+								<feature name="Compiled"/>
+								<feature name="Experimental"/>
+							</and>
+						</and>
+						<and name="Nonstructured">
+							<alt mandatory="true" name="Modality_2">
+								<feature name="Email"/>
+								<feature name="Textprocessingfiles"/>
+								<feature name="PDF"/>
+								<feature name="Spreadsheets"/>
+								<and name="Digitalimages">
+									<feature name="Semanticanalysis_1"/>
+									<feature name="Emotionanalysis_1"/>
+									<feature name="Multimediaanalysis_1"/>
+								</and>
+								<feature name="Video"/>
+								<and name="Audio">
+									<feature name="Semanticanalysis_2"/>
+									<feature name="Emotionanalysis_2"/>
+									<feature name="Multimediaanalysis_2"/>
+								</and>
+								<feature name="Publications"/>
+							</alt>
+							<and mandatory="true" name="Generation_1">
+								<feature name="Captured"/>
+								<feature name="Usergenerated"/>
+							</and>
+						</and>
+						<and name="Semistructured">
+							<alt mandatory="true" name="Modality_3">
+								<feature name="XML"/>
+								<feature name="HTML"/>
+								<feature name="JSON"/>
+							</alt>
+						</and>
+					</alt>
+					<and name="Origin">
+						<alt name="Webandsocialmedia">
+							<feature name="Clicksonlinks"/>
+							<feature name="Text_1"/>
+							<feature name="Publications_1"/>
+							<feature name="Webcontent"/>
+						</alt>
+						<alt name="M2M">
+							<feature name="GPSsignals"/>
+							<feature name="Digitalsensors"/>
+							<feature name="RFIDlectures"/>
+						</alt>
+						<alt name="Biometrics">
+							<feature name="Facerecognition"/>
+							<feature name="Genetics"/>
+							<feature name="Fingerprint"/>
+						</alt>
+						<alt name="Humangenerated">
+							<feature name="Recordings"/>
+							<feature name="Email_1"/>
+							<feature name="Books"/>
+						</alt>
+						<alt name="Transactions">
+							<feature name="Telecommunications"/>
+							<feature name="Healthcareclaims"/>
+							<feature name="Taxrecords"/>
+						</alt>
+					</and>
+				</and>
+			</and>
+			<and mandatory="true" name="Services_2">
+				<or mandatory="true" name="Collecting">
+					<alt name="Digitalanalysistools">
+						<feature name="Googleanalytics"/>
+						<feature name="Hootsuit"/>
+						<feature name="TwitterAnalytics"/>
+						<feature name="FacebookInsights"/>
+					</alt>
+					<and name="Onlineformsandsurveys">
+						<feature mandatory="true" name="Googleforms"/>
+					</and>
+					<alt name="Trendandsearchtools">
+						<feature name="Googletrends"/>
+						<feature name="Topsy"/>
+					</alt>
+					<feature name="Databases"/>
+				</or>
+				<and mandatory="true" name="Storing">
+					<alt name="SQL">
+						<feature name="Oracle_2"/>
+						<feature name="IBMDB2"/>
+						<feature name="SQLServer"/>
+						<feature name="MicrosoftAccess"/>
+						<feature name="Informix"/>
+						<alt name="Distributed">
+							<feature name="Vertica"/>
+							<feature name="Greenplum"/>
+						</alt>
+					</alt>
+					<alt mandatory="true" name="NonSQL">
+						<alt name="Columnar">
+							<feature name="ApacheCassandra"/>
+							<feature name="ApacheHBase"/>
+						</alt>
+						<alt name="Document">
+							<feature name="MongoDB"/>
+							<feature name="ApacheCouchDB"/>
+						</alt>
+						<alt name="Graphs">
+							<feature name="AmazonNeptune"/>
+							<feature name="Neo4j"/>
+							<feature name="MicrosoftHorton"/>
+						</alt>
+						<alt name="Keyvalue">
+							<feature name="Bashotechnologiesriak"/>
+							<feature name="Redis"/>
+						</alt>
+						<alt name="XML_1">
+							<feature name="Marklogic"/>
+							<feature name="Sedna"/>
+						</alt>
+						<alt name="In_memory">
+							<feature name="Apacheignite"/>
+							<feature name="ArangoDB"/>
+							<feature name="InfinityDB"/>
+						</alt>
+					</alt>
+				</and>
+				<and mandatory="true" name="Preprocessing">
+					<feature mandatory="true" name="Datatransfer"/>
+					<feature mandatory="true" name="Datacompression"/>
+					<and mandatory="true" name="Datapreparation">
+						<feature mandatory="true" name="Exploredata"/>
+						<and mandatory="true" name="Preprocessingdata">
+							<and mandatory="true" name="Clean">
+								<feature mandatory="true" name="Analysis"/>
+								<feature mandatory="true" name="Datatransformation"/>
+								<feature mandatory="true" name="Duplicatesremoval"/>
+								<and mandatory="true" name="Statisticmethod">
+									<feature name="Average"/>
+									<feature name="Standarddeviation"/>
+									<feature name="Ranges"/>
+									<feature name="Clusteralgorithms"/>
+								</and>
+								<or name="Techniques">
+									<and name="Removeunwantedobservations">
+										<feature name="Duplicates"/>
+										<feature name="Irrelevant"/>
+									</and>
+									<and name="Fixstructuralerrors">
+										<feature name="Typos"/>
+										<feature name="Mislabeledclasses"/>
+									</and>
+									<and name="Handlemissingdata">
+										<feature name="Drop"/>
+										<feature name="Input"/>
+									</and>
+									<feature name="Getridofextraspaces"/>
+									<feature name="Spellcheck"/>
+									<feature name="Deleteallformatting"/>
+								</or>
+								<or mandatory="true" name="Tools">
+									<feature name="Opendefine"/>
+									<feature name="TrifactaWrangle"/>
+									<feature name="Drake"/>
+									<feature name="TIBCOclairty"/>
+									<feature name="Winpure"/>
+									<feature name="Dataladder"/>
+									<feature name="Datacleaner"/>
+									<feature name="Cloudingo"/>
+								</or>
+							</and>
+							<feature mandatory="true" name="Integrate"/>
+							<feature mandatory="true" name="Package"/>
+						</and>
+					</and>
+				</and>
+				<and mandatory="true" name="Processing_3">
+					<and mandatory="true" name="Analytics">
+						<and mandatory="true" name="Techniques_2">
+							<or mandatory="true" name="Objective">
+								<or name="Descriptive">
+									<feature name="Countssumsandaverages"/>
+									<feature name="Variationrates"/>
+									<and name="Frequencytables">
+										<feature name="Alteryx"/>
+										<feature name="Excel"/>
+									</and>
+									<and name="A_Btesting">
+										<feature name="Googleanalytics_1"/>
+										<feature name="Optimizely"/>
+										<feature name="VWO"/>
+										<feature name="Adobetarget"/>
+										<feature name="Evergage"/>
+										<feature name="Unbounce"/>
+									</and>
+									<feature name="Factorialandclusteranalysis"/>
+									<and name="Decisiontree">
+										<feature name="Creatly"/>
+										<feature name="Lucidchart"/>
+										<feature name="Canva"/>
+									</and>
+								</or>
+								<and name="Predictive">
+									<feature name="Temporalseries"/>
+									<feature name="Regressiontechniques"/>
+									<feature name="Neuralnetworks"/>
+									<and name="Machinelearning_3">
+										<and mandatory="true" name="Accessdata">
+											<feature name="Sensors"/>
+											<feature name="Files"/>
+											<feature name="Databases_1"/>
+										</and>
+										<and mandatory="true" name="Analyzedata">
+											<feature name="Dataexploration"/>
+											<feature name="Preprocessing_1"/>
+											<feature name="Domainspecificalgorithms"/>
+										</and>
+										<and mandatory="true" name="Develop">
+											<feature name="AImodel"/>
+											<alt name="Algorithmdevelopment">
+												<and name="Bayesiannetwork">
+													<feature name="NaiveBayes"/>
+													<feature name="GaussianNaiveBayes"/>
+													<feature name="Averageonedependenceestimators"/>
+												</and>
+												<and name="Decisiontree_1">
+													<feature name="Classificationandregressiontree"/>
+													<feature name="Conditionaldecisiontrees"/>
+													<feature name="M5"/>
+												</and>
+												<and name="Dimensionalityreduction">
+													<feature name="Principalcomponentanalysis"/>
+													<feature name="Projectionpursuit"/>
+													<feature name="Multidimensionalscaling"/>
+													<feature name="Principalcomponentregression"/>
+													<feature name="Mixturediscriminantanalysis"/>
+													<feature name="Lineardiscriminantanalysis"/>
+													<feature name="Regularizeddiscriminantanalysis"/>
+													<feature name="Flexiblediscriminantanalysis"/>
+													<feature name="Quadraticdiscriminantanalysis"/>
+												</and>
+												<and name="Instancebased">
+													<feature name="k_nearestneighbour"/>
+													<feature name="Learningvectorquantization"/>
+													<feature name="Self_organizingmap"/>
+													<feature name="Locallyweightedlearning"/>
+												</and>
+												<and name="Clustering">
+													<feature name="k_Means"/>
+													<feature name="k_Medians"/>
+													<feature name="Expectationmaximization"/>
+													<feature name="Hierarchicalclustering"/>
+												</and>
+												<and name="Regression">
+													<feature name="Linearregression"/>
+													<feature name="Ordinaryleastsquaresregression"/>
+													<feature name="Stepwiseregression"/>
+													<feature name="Logisticregression"/>
+													<feature name="Multivariateadaptativeregressionsplines"/>
+												</and>
+												<and name="Rulesystem">
+													<feature name="Cubist"/>
+													<feature name="Onerule"/>
+													<feature name="Zerorule"/>
+													<feature name="Repeatedincrementalpruningtoproduceerrorreduction"/>
+												</and>
+												<and name="Regularization">
+													<feature name="Leastabsoluteshrinkageandselectionoperator"/>
+													<feature name="Elasticnet"/>
+													<feature name="Leastangleregression"/>
+												</and>
+												<and name="Neuralnetworks_1">
+													<feature name="Radialbasisfunctionnetwork"/>
+													<feature name="Perceptron"/>
+													<feature name="Back_propagation"/>
+													<feature name="Hopfieldnetwork"/>
+												</and>
+												<and name="Ensemble">
+													<feature name="Randomforest"/>
+													<feature name="Gradientboostingmachines"/>
+													<feature name="Gradientboostingregressiontrees"/>
+													<feature name="Boosting"/>
+													<feature name="Boostrappedaggregation"/>
+												</and>
+												<and name="Deeplearning">
+													<feature name="DeepBoltzmannmachine"/>
+													<feature name="Deepbeliefnetworks"/>
+													<feature name="Convolutionalneuralnetwork"/>
+													<feature name="StackedAuto_encoders"/>
+												</and>
+											</alt>
+											<feature name="Modelingandsimulation"/>
+										</and>
+										<and mandatory="true" name="Deploy">
+											<feature name="Desktop"/>
+											<feature name="Enterprisesystems"/>
+											<feature name="Embeddedsystems"/>
+										</and>
+										<or name="Graphanalysis">
+											<feature name="Pathanalysis"/>
+											<feature name="Connectivityanalysis"/>
+											<feature name="Communityanalysis"/>
+											<and name="Centralityanalysis">
+												<feature name="Subgraphisomorphism"/>
+												<feature name="Graphembedding"/>
+											</and>
+										</or>
+										<alt mandatory="true" name="Types">
+											<and name="Supervised">
+												<feature name="Classification"/>
+												<feature name="Regression_1"/>
+											</and>
+											<and name="Nonsupervised">
+												<and name="Clustering_1">
+													<feature name="Patternrecognition"/>
+												</and>
+												<feature name="Autoencoder"/>
+											</and>
+											<feature name="Byeffort"/>
+										</alt>
+									</and>
+									<and name="NaturalLanguageProcessing">
+										<or abstract="true" mandatory="true" name="NaturalLanguageProcessing_1">
+											<or name="Automaticfeelinganalysisdetector">
+												<alt name="Opinion">
+													<feature name="Positive"/>
+													<feature name="Negative"/>
+													<feature name="Neutral"/>
+												</alt>
+												<alt name="Emotion">
+													<feature name="Hapiness"/>
+													<feature name="Desire"/>
+													<feature name="Surprise"/>
+													<feature name="Fear"/>
+													<feature name="Sadness"/>
+													<feature name="Satisfaction"/>
+													<feature name="Gratitude"/>
+													<feature name="Rage"/>
+													<feature name="Discomfort"/>
+													<feature name="Dislike"/>
+												</alt>
+												<or name="Userintention">
+													<feature name="Question"/>
+													<feature name="Doubt"/>
+													<feature name="Complain"/>
+													<feature name="Suggest"/>
+												</or>
+												<or name="Awareness">
+													<feature name="Peopleimplication"/>
+													<feature name="Socialmovement"/>
+												</or>
+												<and name="Category_2">
+													<or mandatory="true" name="Industry">
+														<feature name="Consumption"/>
+														<feature name="Automotive"/>
+														<feature name="Banking"/>
+														<feature name="Health"/>
+														<feature name="Telecommunication"/>
+													</or>
+												</and>
+											</or>
+											<and name="Automaticdocsclassifier">
+												<feature name="Predict"/>
+												<feature name="Train"/>
+											</and>
+											<feature name="Topicsdetector"/>
+											<feature name="Documentsimilaritydetector"/>
+											<feature name="Ageandgenderdetector"/>
+											<or name="ConcepttaggingNER">
+												<feature name="People"/>
+												<feature name="Organization"/>
+												<feature name="Brand"/>
+												<feature name="Enrichtext"/>
+												<feature name="Indexing"/>
+												<feature name="Informationretrieval"/>
+											</or>
+										</or>
+										<or mandatory="true" name="Techniques_3">
+											<feature name="Rapport"/>
+											<feature name="Covertorders"/>
+											<feature name="Dissociation"/>
+											<feature name="Reframing"/>
+											<feature name="Anchoring"/>
+											<feature name="Reference"/>
+											<and name="Bodyphisiology">
+												<feature name="Ocularaccesses"/>
+											</and>
+										</or>
+										<or mandatory="true" name="Methodology">
+											<and name="Spelling">
+												<alt name="Tokenization">
+													<feature name="Luceneanalyzers"/>
+													<feature name="OpenNLPTokenizer"/>
+													<feature name="Rosettebaselinguistics"/>
+												</alt>
+												<and name="Lemmatization">
+													<feature mandatory="true" name="Luceneanalyzers_1"/>
+												</and>
+												<feature name="Wordform"/>
+												<feature name="Type_2"/>
+												<feature name="Acronyms"/>
+												<feature name="Measureunits"/>
+											</and>
+											<and name="POStagging">
+												<feature name="Sintacticcategory"/>
+											</and>
+											<and name="ConcepttaggingNER_2">
+												<feature name="Semanticcategory"/>
+												<and name="Ontology">
+													<feature mandatory="true" name="Name"/>
+													<feature mandatory="true" name="Magnitude"/>
+													<feature mandatory="true" name="Status"/>
+												</and>
+											</and>
+											<and name="Resourcesummarization">
+												<feature name="Richresource"/>
+											</and>
+											<and name="Resourceclassification">
+												<feature name="Patternlace"/>
+											</and>
+											<and name="Resourceindexing">
+												<feature name="Patternstructuring"/>
+											</and>
+											<and name="Exploitation">
+												<feature name="Transformationrules"/>
+											</and>
+										</or>
+										<alt mandatory="true" name="Levelofcontent">
+											<or name="Microunderstanding">
+												<feature name="Extractingfacts"/>
+												<feature name="Entities"/>
+												<feature name="Entityrelationships"/>
+												<feature name="Actions"/>
+												<feature name="Metadatafields"/>
+											</or>
+											<or name="Macrounderstanding">
+												<feature name="Clustering_2"/>
+												<feature name="Categorization"/>
+												<feature name="Similarity"/>
+												<feature name="Topicanalysis"/>
+												<feature name="Wordcloud"/>
+												<feature name="Summarization"/>
+											</or>
+										</alt>
+									</and>
+								</and>
+								<or name="Prescriptive">
+									<feature name="Conditionalprobability"/>
+									<feature name="Regressiontechniques_1"/>
+									<feature name="Associationrules"/>
+									<feature name="MonteCarlomethod"/>
+									<feature name="Geneticalgorithms"/>
+								</or>
+							</or>
+						</and>
+						<alt mandatory="true" name="Types_2">
+							<and name="Quantitative">
+								<feature mandatory="true" name="Numericaldata"/>
+							</and>
+							<and name="Qualitative">
+								<alt mandatory="true" name="Nonnumericaldata">
+									<feature name="Text_2"/>
+									<feature name="Images"/>
+									<feature name="Audio_1"/>
+									<alt name="Video_1">
+										<feature name="Exploratorydataanalysis"/>
+										<feature name="Confirmatorydataanalysis"/>
+									</alt>
+								</alt>
+							</and>
+						</alt>
+						<alt mandatory="true" name="Methodology_2">
+							<alt name="Exploratorydataanalysis_1">
+								<or name="Locationmeasurements">
+									<feature name="Meancalculation"/>
+									<feature name="Mode"/>
+									<feature name="Minimum"/>
+									<feature name="Maximum"/>
+									<feature name="Quantile"/>
+								</or>
+								<or name="Dispersionmeasurements">
+									<feature name="Interquartilesrange"/>
+									<feature name="Datarange"/>
+									<feature name="Variance"/>
+									<feature name="Standarddeviation_1"/>
+								</or>
+								<or name="Formmeasurements">
+									<feature name="Assymetry"/>
+									<feature name="Kurtosis"/>
+								</or>
+							</alt>
+							<and name="Confirmatorydataanalysis_1">
+								<and name="Tools_2">
+									<feature name="SPSS"/>
+									<feature name="SAS"/>
+									<feature name="SPAD"/>
+									<feature name="Statgraphics"/>
+								</and>
+							</and>
+						</alt>
+					</and>
+					<or mandatory="true" name="Analyticstechniques">
+						<feature name="Datavisualization"/>
+						<feature name="Splittesting"/>
+						<feature name="Temporaryseriesanalysis"/>
+						<feature name="Analysisoffeelingsandtext"/>
+						<feature name="Learningassociationrules"/>
+					</or>
+					<or mandatory="true" name="Technique">
+						<and name="Stream">
+							<feature name="Metriccomputation"/>
+							<feature name="Statuscollection"/>
+							<feature name="Filtering"/>
+							<feature name="Tokenization_2"/>
+							<feature name="Annotation"/>
+							<feature name="Store"/>
+							<alt mandatory="true" name="Technology">
+								<and name="Apachestorm">
+									<feature name="Streams"/>
+									<feature name="Spouts"/>
+									<feature name="Bolts"/>
+									<feature name="Flume"/>
+									<feature name="Trident"/>
+									<feature name="S4"/>
+								</and>
+								<and name="ApacheSamza">
+									<feature name="Kafka"/>
+									<feature name="YARN"/>
+									<feature name="SamzaAPI"/>
+									<feature name="Kestrel"/>
+								</and>
+							</alt>
+						</and>
+						<and name="Batch_2">
+							<or abstract="true" mandatory="true" name="Batch_2_1">
+								<feature name="Combining"/>
+								<feature name="Cleaning"/>
+								<feature name="Replication"/>
+								<feature name="Filtering_1"/>
+								<feature name="Aggregate"/>
+								<feature name="Prepare"/>
+								<feature name="Readfile"/>
+								<feature name="Process"/>
+								<feature name="Writeoutputfile"/>
+							</or>
+							<alt mandatory="true" name="Technology_2">
+								<and name="Hadoop">
+									<and name="HDFS">
+										<feature name="HBase"/>
+									</and>
+									<feature name="YARN_1"/>
+									<and name="MapReduce">
+										<feature name="Hive"/>
+										<feature name="Pig"/>
+										<feature name="Cascading"/>
+										<feature name="Spark"/>
+										<feature name="SparkSQLshark"/>
+									</and>
+								</and>
+								<and name="Azuredatalakeanalytics">
+									<feature name="U_SQL"/>
+								</and>
+							</alt>
+						</and>
+						<and name="Hybrid_2">
+							<or abstract="true" mandatory="true" name="Hybrid_2_1">
+								<feature name="Transformation"/>
+								<feature name="Enrichment"/>
+								<feature name="Aggregation"/>
+								<feature name="Patterndetection"/>
+								<feature name="Splitting"/>
+								<feature name="Routing"/>
+								<feature name="Validation"/>
+								<feature name="Filtering_2"/>
+							</or>
+							<alt mandatory="true" name="Technology_3">
+								<and name="Apachespark">
+									<feature name="Mlib"/>
+									<feature name="SparkSQL"/>
+									<feature name="GraphX"/>
+									<feature name="Sparkstreaming"/>
+									<feature name="Sparkcore"/>
+								</and>
+								<and name="Apacheflink">
+									<feature name="DatastreamAPI"/>
+									<feature name="DatasetAPI"/>
+									<feature name="TableAPI"/>
+									<feature name="Gelly"/>
+									<feature name="FlinkML"/>
+								</and>
+							</alt>
+						</and>
+					</or>
+				</and>
+				<and mandatory="true" name="Interface">
+					<or mandatory="true" name="Platform">
+						<and name="Userinterface">
+							<feature mandatory="true" name="Enduserapplication"/>
+							<feature mandatory="true" name="Visualizationapplication"/>
+						</and>
+						<feature name="Applicationinterface"/>
+					</or>
+					<feature mandatory="true" name="Reportinganddashboarding"/>
+				</and>
+				<and mandatory="true" name="Representation">
+					<or mandatory="true" name="Type_3">
+						<or name="Graphics">
+							<feature name="Area"/>
+							<feature name="Barchart"/>
+							<feature name="Boxandwhiskerplot"/>
+							<feature name="Cloudchart"/>
+							<feature name="Circularview"/>
+							<feature name="Ganttdiagram"/>
+							<feature name="Histogram"/>
+						</or>
+						<or name="Table">
+							<feature name="Highlight"/>
+							<feature name="Text_3"/>
+						</or>
+						<or name="Maps">
+							<feature name="Cartogram"/>
+							<feature name="Heat"/>
+						</or>
+						<feature name="Infographic"/>
+					</or>
+					<alt mandatory="true" name="Tool">
+						<feature name="Tableau"/>
+						<feature name="Qlik"/>
+						<feature name="Plotly"/>
+						<feature name="Datawrapper"/>
+						<feature name="Infogram"/>
+						<feature name="Piktochart"/>
+					</alt>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>
