@@ -78,7 +78,11 @@ public class UVLTransformation {
 			for (Map.Entry<String, IFeatureModel> entry : featureModels.entrySet()) {
 				Path outputPath = outputFolder.resolve(entry.getKey() + Constants.UVL_EXTENSION);
 				logger.log(Level.INFO, String.format("Write file %s...", outputPath.getFileName()));
+				long startTime = System.currentTimeMillis();
 				writer.write(entry.getValue(), outputPath);
+				long necessaryTime = System.currentTimeMillis() - startTime;
+				logger.log(Level.INFO,
+						String.format("Time needed to transform %s: %s ms", outputPath.getFileName(), necessaryTime));
 				double kBytes = Utils.getFileSizeKiloBytes(outputPath);
 				logger.log(Level.INFO,
 						String.format("File size of file %s: %s kBytes", outputPath.getFileName(), kBytes));
