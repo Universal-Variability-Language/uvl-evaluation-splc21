@@ -19,8 +19,8 @@ For building, the following classes need to be compiled:
 
 To build the files, all .jar files in /lib need to be included.
 
-In addition, to compiling the classes yourself you can also use common IDEs for Java development. The project comes with the required .classpath and .project to compile and run the program.
-The setup was tested with Eclipse for Java Developers 2021-06 and Visual Studio Code with 1.57 with recommended Java extensions.
+In addition, to compiling the classes yourself you can also use Eclipse IDEs for Java development. The project comes with the required .classpath and .project to compile and run the program.
+The setup was tested with Eclipse for Java Developers 2021-06.
 
 ## How to use
 
