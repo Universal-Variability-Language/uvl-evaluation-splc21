@@ -7,33 +7,42 @@ A Community Effort Towards a Unified Language`. The repository consists of:
 * necessarry dependencies as .jars 
 * the models to translate 
 * the resulting models. 
-* Invoking the main method in `src/at/jku/cps/travart/evaluation/UVLTransformation.java` generates the resulting models overwriting existing ones and also outputs the runtimes required for the translation.
-
 
 ## How to build
 
-For building, the following classes need to be compiled:
-* `src/at/jku/cps/travart/evaluation/UVLTransformation.java`
-* `src/at/jku/cps/travart/evaluation/standalone/util/Constants.java`
-* `src/at/jku/cps/travart/evaluation/standalone/util/Utils.java`
+The project uses maven as the build engine. We depend on the FeatureIDE library and the TraVarT approach, which both are not available through the standard repositories. Therefore before you run the build for the first time, you need to install the dependencies in your local maven repository. You can do that by either running the setup.sh for Linux systems or setup.bat for Windows. Alternatively head to the root folder of the project in a shell and run:
 
-To build the files, all .jar files in /lib need to be included.
+* `mvn install:install-file -Dfile="lib/uvl-parser-0.1.0-standalone.jar" -DgroupId="de.neominik" -DartifactId="uvl" -Dversion="0.1.0-SNAPSHOT" -Dpackaging="jar"`
 
-In addition, to compiling the classes yourself you can also use Eclipse IDEs for Java development. The project comes with the required .classpath and .project to compile and run the program.
-The setup was tested with Eclipse for Java Developers 2021-06.
+* `mvn install:install-file -Dfile="lib/de.ovgu.featureide.lib.fm-v3.7.0.jar" -DgroupId="de.ovgu.featureide" -DartifactId="de.ovgu.featureide" -Dversion="3.7.0" -Dpackaging="jar"`
+ 
+* `mvn install:install-file -Dfile="lib/travart.core-0.0.1.jar" -DgroupId="at.jku.cps.travart" -DartifactId="travart.core" -Dversion="0.0.1" -Dpackaging="jar"`
 
-## How to use
+* `mvn install:install-file -Dfile="lib/travart.dopler-decision-0.0.1.jar" -DgroupId="at.jku.cps.travart" -DartifactId="travart.dopler-decision" -Dversion="0.0.1" -Dpackaging="jar"`
 
-In order to reproduce the results the main method in `src/at/jku/cps/travart/evaluation/UVLTransformation.java` needs to be invoked.
-The resulting models will all be stored in `models_output/`.
-Furthermore, the standard output gives information on the file sizes and runtimes.
-The standard output is stored in a file named `models.log`.
-The results of our empirical evaluation are based on these files.
+* `mvn install:install-file -Dfile="lib/travart.ovm-0.0.1.jar" -DgroupId="at.jku.cps.travart" -DartifactId="travart.ovm" -Dversion="0.0.1" -Dpackaging="jar"`
+
+After you installed the dependencies, you can build the evaluation project using the follwing command:
+
+* `mvn clean package`
+
+This will build two packages (default maven build and the full dependency build).
+
+We tested the script with the `maven-compiler-plugin` version `3.8.1` and the `maven-assembly-plugin` version `3.3.0`. If you want to use different settings, change them in the `pom.xml`.
 
 
+## How to use and execute the evaluation (and creating the UVL models)
+
+After you built the project you can execute the evaluation and create the UVL models using the following commands:
+
+1. `cp -r .\models\ .\target\`
+
+2. `java -jar .\target\uvl-evaluation-splc21-artifact-0.0.1-SNAPSHOT-jar-with-dependencies.jar`
+
+This results in a `\target\models.log` file, containing the evaluation data and a `\target\models_output` folder, containing all UVL models.
 
 ## Dependencies
-All required dependencies are provided as jars in /lib and also added to .classpath for more simple building.
+All required dependencies are provided as jars in /lib.
 
 
 

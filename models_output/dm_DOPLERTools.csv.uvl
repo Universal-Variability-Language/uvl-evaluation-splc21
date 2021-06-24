@@ -13,21 +13,21 @@ features
 			DK_modelconverter
 			CW_resolution_height	
 				optional
-					CW_resolution_height_600.0
-					CW_resolution_height_1024.0
+					CW_resolution_height_1050.0
 					CW_resolution_height_1080.0
 					CW_resolution_height_768.0
+					CW_resolution_height_600.0
 					CW_resolution_height_1200.0
-					CW_resolution_height_1050.0
+					CW_resolution_height_1024.0
 			ProprietaryTools
 			CW_resolution_width	
 				optional
 					CW_resolution_width_1400.0
-					CW_resolution_width_1600.0
-					CW_resolution_width_1280.0
-					CW_resolution_width_800.0
-					CW_resolution_width_1024.0
 					CW_resolution_width_1900.0
+					CW_resolution_width_1024.0
+					CW_resolution_width_1600.0
+					CW_resolution_width_800.0
+					CW_resolution_width_1280.0
 			SERVER
 			DK_sharepoint
 			CW	
@@ -62,18 +62,18 @@ features
 			PK
 
 constraints
+	ALL => PK
 	ALL => CW
 	ALL => DK
-	ALL => PK
-	800x600 => CW_resolution_height_600.0
-	1400x1050 => CW_resolution_width_1400.0
-	1600x1200 => CW_resolution_width_1600.0
-	1280x1024 => CW_resolution_width_1280.0
-	1280x1024 => CW_resolution_height_1024.0
-	800x600 => CW_resolution_width_800.0
-	1024x768 => CW_resolution_width_1024.0
-	1900x1080 => CW_resolution_width_1900.0
-	1900x1080 => CW_resolution_height_1080.0
-	1024x768 => CW_resolution_height_768.0
-	1600x1200 => CW_resolution_height_1200.0
 	1400x1050 => CW_resolution_height_1050.0
+	1900x1080 => CW_resolution_height_1080.0
+	1400x1050 => CW_resolution_width_1400.0
+	1024x768 => CW_resolution_height_768.0
+	1900x1080 => CW_resolution_width_1900.0
+	800x600 => CW_resolution_height_600.0
+	1024x768 => CW_resolution_width_1024.0
+	1600x1200 => CW_resolution_width_1600.0
+	800x600 => CW_resolution_width_800.0
+	1280x1024 => CW_resolution_width_1280.0
+	1600x1200 => CW_resolution_height_1200.0
+	1280x1024 => CW_resolution_height_1024.0
