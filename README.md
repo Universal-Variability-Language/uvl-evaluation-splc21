@@ -33,11 +33,11 @@ We tested the script with the `maven-compiler-plugin` version `3.8.1` and the `m
 
 ## How to use and execute the evaluation (and create the UVL models)
 
-After you built the project you can execute the evaluation and create the UVL models using the following commands:
+After you built the project you can execute the evaluation and create the UVL models using the following commands (bash/powershell):
 
-1. `cp -r .\models\ .\target\`
+1. `cp -r models target`
 
-2. `java -jar .\target\uvl-evaluation-splc21-artifact-0.0.1-SNAPSHOT-jar-with-dependencies.jar`
+2. `java -jar target/uvl-evaluation-splc21-artifact-0.0.1-SNAPSHOT-jar-with-dependencies.jar`
 
 This results in a `models.log` file, containing the evaluation data and a `models_output/` folder, containing all UVL models.
 
