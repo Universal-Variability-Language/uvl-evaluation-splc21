@@ -10,11 +10,15 @@ A Community Effort Towards a Unified Language`. The repository consists of:
 
 ## How to build
 
-The project uses maven as the build engine. We depend on the FeatureIDE library and the TraVarT approach, which both are not available through the standard repositories. Therefore before you run the build for the first time, you need to install the dependencies in your local maven repository. You can do that by either running the `setup.sh` for Linux systems or `setup.bat` for Windows. Alternatively head to the root folder of the project in a shell and run:
+The project uses maven as the build engine. We depend on the FeatureIDE library and the TraVarT approach, which both are not available through the standard repositories. Therefore before you run the build for the first time, you need to install the dependencies in your local maven repository. 
+
+You can do that by either running the `setup.sh` for Linux systems or `setup.bat` for Windows. 
+
+Alternatively head to the root folder of the project in a shell and run:
 
 * `mvn install:install-file -Dfile="lib/uvl-parser-0.1.0-standalone.jar" -DgroupId="de.neominik" -DartifactId="uvl" -Dversion="0.1.0-SNAPSHOT" -Dpackaging="jar"`
 
-* `mvn install:install-file -Dfile="lib/de.ovgu.featureide.lib.fm-v3.7.0.jar" -DgroupId="de.ovgu.featureide" -DartifactId="de.ovgu.featureide" -Dversion="3.7.0" -Dpackaging="jar"`
+* `mvn install:install-file -Dfile="lib/de.ovgu.featureide.lib.fm-v3.7.0.jar" -DgroupId="de.ovgu.featureide" -DartifactId="lib.fm" -Dversion="3.7.0" -Dpackaging="jar"`
  
 * `mvn install:install-file -Dfile="lib/travart.core-0.0.1.jar" -DgroupId="at.jku.cps.travart" -DartifactId="travart.core" -Dversion="0.0.1" -Dpackaging="jar"`
 
@@ -22,7 +26,7 @@ The project uses maven as the build engine. We depend on the FeatureIDE library 
 
 * `mvn install:install-file -Dfile="lib/travart.ovm-0.0.1.jar" -DgroupId="at.jku.cps.travart" -DartifactId="travart.ovm" -Dversion="0.0.1" -Dpackaging="jar"`
 
-After you installed the dependencies, you can build the evaluation project using the follwing command:
+After you installed the dependencies, you can build the evaluation project using the following command:
 
 * `mvn clean package`
 
